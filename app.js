@@ -1,5 +1,5 @@
 var express = require('express');
-var ArticleProvider = require('./articleprovider-memory').ArticleProvider;
+var ArticleProvider = require('./articleprovider-mongodb').ArticleProvider;
 
 var app = module.exports = express();
 
@@ -21,7 +21,7 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-var articleProvider= new ArticleProvider();
+var articleProvider= new ArticleProvider('localhost', 27017);
 
 app.get('/', function(req, res){
     articleProvider.findAll( function(error,docs){
