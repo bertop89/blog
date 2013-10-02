@@ -58,6 +58,12 @@ h1 {
   width: 490px;
   height: 90px;
 }
+.article .comments {
+  margin: 30px;
+}
+.article .comments .comment {
+  margin: 10px;
+}
 .article .return {
   margin-top: 20px;
 }

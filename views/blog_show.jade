@@ -5,10 +5,12 @@ block content
         div.created_at= article.created_at
         div.title= article.title
         div.body= article.body
-        - each comment in article.comments
-          div.comment
-            div.person= comment.person
-            div.comment= comment.comment
+        div.comments
+          h2= "Comentarios"
+          - each comment in article.comments
+            div.comment
+              div.person= comment.person
+              div.commentboy= comment.comment
         div
           form( method="post", action="/blog/addComment")
             input( type="hidden", name="_id", value=article._id.toHexString())
